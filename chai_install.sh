@@ -5,5 +5,6 @@ set -e
 # Assumes that relevant apt-get packages from
 # scripts/linux_setup.sh are already installed.
 conda env create -f environment.yml
+source ~/.bashrc
 conda activate rllab3
 pip install -e .
