@@ -1,12 +1,12 @@
 name: rllab3
 channels:
+    - anaconda
     - https://conda.anaconda.org/kne
     - https://conda.anaconda.org/tlatorre
     - https://conda.anaconda.org/cjs14
     - https://conda.anaconda.org/menpo
     - jjhelmus
     - soumith
-    - anaconda
 dependencies:
     - tensorflow
     - python==3.5.2
