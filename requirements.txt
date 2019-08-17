@@ -20,7 +20,6 @@ lasagne==0.1
 Mako==1.1.0
 memory_profiler==0.55.0
 nose2==0.9.1
-forked_path==0.2.3
 plotly==4.1.0
 polling==0.3.0
 pygame==1.9.6

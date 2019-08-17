@@ -1,4 +1,3 @@
-from path import Path
 import sys
 import pickle as pickle
 import random
@@ -38,33 +37,6 @@ def compact(x):
     elif isinstance(x, list):
         return [elem for elem in x if elem is not None]
     return x
-
-
-def cached_function(inputs, outputs):
-    import theano
-    with Message("Hashing theano fn"):
-        if hasattr(outputs, '__len__'):
-            hash_content = tuple(map(theano.pp, outputs))
-        else:
-            hash_content = theano.pp(outputs)
-    cache_key = hex(hash(hash_content) & (2 ** 64 - 1))[:-1]
-    cache_dir = Path('~/.hierctrl_cache')
-    cache_dir = cache_dir.expanduser()
-    cache_dir.mkdir_p()
-    cache_file = cache_dir / ('%s.pkl' % cache_key)
-    if cache_file.exists():
-        with Message("unpickling"):
-            with open(cache_file, "rb") as f:
-                try:
-                    return pickle.load(f)
-                except Exception:
-                    pass
-    with Message("compiling"):
-        fun = compile_function(inputs, outputs)
-    with Message("picking"):
-        with open(cache_file, "wb") as f:
-            pickle.dump(fun, f, protocol=pickle.HIGHEST_PROTOCOL)
-    return fun
 
 
 # Immutable, lazily evaluated dict
