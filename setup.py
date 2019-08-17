@@ -5,7 +5,7 @@ setup(
     packages=[package for package in find_packages()
                 if package.startswith('rllab')],
     install_requires=[
-        'cloudpickle~=1',
+        'cloudpickle',
         'six~=1.12.0',
         'Flask~=1.1.1',
         'numpy~=1.16.4',
