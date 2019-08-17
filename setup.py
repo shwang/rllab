@@ -2,8 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='rllab',
-    packages=[package for package in find_packages()
-                if package.startswith('rllab')],
+    packages=['rllab', 'sandbox'],
     install_requires=[
         'cloudpickle',
         'six~=1.12.0',
