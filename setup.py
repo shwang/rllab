@@ -19,7 +19,6 @@ setup(
         'botocore==1.12.210',
         'cached_property~=1.5.1',
         'python_dateutil~=2.8.0',
-        'rllab@git+https://github.com/shwang/rllab.git'
         'gym==0.14.0',
         'hyperopt==0.1.2',
         'ipdb==0.12.2',
