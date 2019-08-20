@@ -81,7 +81,7 @@ def stack_tensor_dict_list(tensor_dict_list):
         if isinstance(example, dict):
             v = stack_tensor_dict_list([x[k] for x in tensor_dict_list])
         else:
-            v = stack_tensor_list([x[k] for x in tensor_dict_list])
+            v = stack_tensor_list([x.get(k, None) for x in tensor_dict_list])
         ret[k] = v
     return ret
 
